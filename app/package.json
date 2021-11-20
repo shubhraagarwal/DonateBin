@@ -10,8 +10,21 @@
     "lint": "eslint ."
   },
   "dependencies": {
+    "@react-navigation/native": "^6.0.6",
+    "@react-navigation/native-stack": "^6.2.5",
+    "axios": "^0.24.0",
+    "axios-react": "^2.0.8",
+    "lottie-react-native": "^5.0.0",
+    "mobx": "^6.3.7",
+    "mobx-react": "^7.2.1",
     "react": "17.0.2",
-    "react-native": "0.66.3"
+    "react-native": "0.66.3",
+    "react-native-elements": "^3.4.2",
+    "react-native-maps": "^0.29.4",
+    "react-native-modal": "^13.0.0",
+    "react-native-safe-area-context": "^3.3.2",
+    "react-native-screens": "^3.9.0",
+    "react-native-vector-icons": "^9.0.0"
   },
   "devDependencies": {
     "@babel/core": "^7.16.0",
