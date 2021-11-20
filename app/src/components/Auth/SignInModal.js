@@ -24,7 +24,8 @@ const LoginModal = ({navigation}) => {
       .signInWithEmailAndPassword(email, pass)
       .then(() => {
         console.log('User account created & signed in!');
-        navigation.navigate('DelDetails');
+        // ! put a check later
+        navigation.navigate('LandDonor');
       })
       .catch(error => {
         if (error.code === 'auth/email-already-in-use') {
