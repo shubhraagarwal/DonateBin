@@ -6,8 +6,16 @@ Our application **connects donors to non profit organisations**, such that, **do
 ## What it does
 ![plot](images/Flow.png)
 The application has **two interfaces**, one for the donors and one for organisations. <br>The **donor** can sign up and log into their account as a donor. Then they can click a picture of the item they want to donate and proceed to checkout. They can click pictures of multiple items they want to donate before finally checking out. The item description is predicted by a machine learning algorithm in the backend so that the person doesn't have to spend time entering specific details. The item picture, description and the donor location are stored in our database. Now the donor has to wait until an organisation comes and picks up the items at their door step. Thus the donor is free of the hassle of looking up and calling different organisations and enquire about their collection details.<br> The **organisation** can signup or log into the app as an organisation. The app home page has a map, highlighting the locations of donors with different collectible items in whichever area they want to collect from. The organisation can click on any highlighted location and scan through the items available there. Thus the organisation can scan through all the items available in an area and fix a day to collect items they need from every location in that area.<br>
-Hence the donors can donate any item in any quantity (without worrying about how less or how much there donation is going to be) and organisations can collect items from entire area in one day without having to make rounds or making different appointment with people.
-
+Hence the donors can donate any item in any quantity (without worrying about how less or how much there donation is going to be) and organisations can collect items from entire area in one day without having to make rounds or making different appointment with people.<br>
+## App UI
+![plot](images/1.png)
+![plot](images/2.png)
+![plot](images/3.png)
+![plot](images/4.png)
+![plot](images/5.png)
+![plot](images/6.png)
+![plot](images/7.png)
+![plot](images/8.png)<br>
 ## How we built it
 Our development application is visual studio code.
 Stack:<br>
