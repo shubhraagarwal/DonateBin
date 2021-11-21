@@ -4,6 +4,7 @@ class Store {
   longitude = 28.5934;
   latitude = 77.2223;
   imageBase64=''
+  basicUserInfo = []
 
   constructor() {
     makeAutoObservable(this);
@@ -18,6 +19,9 @@ class Store {
   }
   setImageBase64(imageBase64) {
     this.imageBase64 = imageBase64;
+  }
+  setBasicUserInfo(basicUserInfo) {
+    this.basicUserInfo = basicUserInfo;
   }
 }
 

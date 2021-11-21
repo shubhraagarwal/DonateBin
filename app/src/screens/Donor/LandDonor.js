@@ -1,43 +1,28 @@
-import React from 'react';
+import React, {useState, useEffect} from 'react';
 import NoItems from '../../components/Donor/NoItems';
 import ListData from '../../components/Donor/ListData';
+import Axios from 'axios';
+import Store from '../../store/Store';
 
 const LandDonor = ({navigation, route}) => {
   const list = route.params;
-  const data = [
-    {
-      id: 1,
-      title: 'Title 1',
-      description: 'Description 1',
-      image: '../../../assets/dummyImage.jpg',
-    },
-    {
-      id: 2,
-      title: 'Title 2',
-      description: 'Description 2',
-      image: '../../../assets/dummyImage.jpg',
-    },
-    {
-      id: 3,
-      title: 'Title 3',
-      description: 'Description 3',
-      image: '../../../assets/dummyImage.jpg',
-    },
-    {
-      id: 4,
-      title: 'Title 4',
-      description: 'Description 4',
-      image: '../../../assets/dummyImage.jpg',
-    },
-  ];
-  if (list.list) {
-    return (
-      <ListData data={data} navigation={navigation} />
-    );
+
+  const [listdata, setlistdata] = useState([]);
+  useEffect(() => {
+    console.log('object',Store.basicUserInfo.email)
+    Axios.get(`http://10.0.2.2:5000/donate?email=${Store.basicUserInfo.email}`)
+      .then(res => {
+       setlistdata(res.data);
+      })
+      .catch(err => {
+        console.log('18',err);
+      });
+  }, []);
+
+  if (listdata.length !== 0) {
+    return <ListData data={listdata} navigation={navigation} />;
   } else {
-    return (
-      <NoItems navigation={navigation} />
-    );
+    return <NoItems navigation={navigation} />;
   }
 };
 

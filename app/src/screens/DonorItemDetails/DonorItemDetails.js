@@ -6,13 +6,17 @@ import {
   heightPercentageToDP as hp,
 } from 'react-native-responsive-screen';
 import QRCode from 'react-native-qrcode-svg';
+import Store from '../../store/Store';
 
 const DonorItemDetails = ({route, navigation}) => {
   const {item} = route.params;
+  console.log(Store)
 
   return (
     <ImageBackground
-      source={require('../../../assets/dummyImage.jpg')}
+      source={{
+        uri:`data:image/png;base64,${item.image}`
+      }}
       resizeMode="cover"
       style={{flex: 1, justifyContent: 'center'}}>
       <View style={[styles.modal, {height: hp('60%')}]}>
@@ -26,14 +30,14 @@ const DonorItemDetails = ({route, navigation}) => {
         <View style={styles.detailsContainer}>
           <View style={{flex: 2, justifyContent: 'center',alignItems:"center"}}>
             <QRCode
-              value="http://awesome.link.qr"
+              value={item.id}
               backgroundColor='transparent'
               size={hp('23%')}
             />
           </View>
           <View style={{flex: 1, justifyContent: 'space-around'}}>
             <TouchableOpacity
-              onPress={() => navigation.navigate('Confirm')}
+              onPress={() => navigation.navigate('LandDonor')}
               style={styles.confirmButton}>
               <Text style={{color: '#fff', fontSize: hp('3%')}}>
                 Donate

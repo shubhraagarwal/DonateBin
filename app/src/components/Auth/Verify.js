@@ -6,12 +6,15 @@ import {
   heightPercentageToDP as hp,
 } from 'react-native-responsive-screen';
 import auth from '@react-native-firebase/auth';
+import Axios from 'axios';
 
-const Verify = ({email,navigation}) => {
+const Verify = ({email, navigation, name, type}) => {
   const [pass, setpass] = useState();
   const [rePass, setrePass] = useState();
   const [initializing, setInitializing] = useState(true);
   const [user, setUser] = useState();
+
+  console.log(email, name, type);
 
   function onAuthStateChanged(user) {
     setUser(user);
@@ -28,6 +31,7 @@ const Verify = ({email,navigation}) => {
       .createUserWithEmailAndPassword(email, pass)
       .then(() => {
         console.log('User account created & signed in!');
+        onSubmitHandler();
       })
       .catch(error => {
         if (error.code === 'auth/email-already-in-use') {
@@ -41,6 +45,24 @@ const Verify = ({email,navigation}) => {
           Alert.alert('Minimum password length is 6');
         }
         console.error(error);
+      });
+  };
+
+  const onSubmitHandler = () => {
+    console.log('submit handler')
+    Axios.post('http://10.0.2.2:5000/signup', {
+      name: name,
+      email: email,
+      type: type,
+    })
+      .then(res => {
+        console.log('succses 58',res.data);
+        type === 'NGO'
+          ? navigation.navigate('DelDetails')
+          : navigation.navigate('LandDonor', {list: false});
+      })
+      .catch(err => {
+        console.log('64 verify',err);
       });
   };
 
@@ -78,10 +100,8 @@ const Verify = ({email,navigation}) => {
         <View style={{flex: 2}} />
       </View>
     );
-  }
-  else{
-      navigation.navigate('DelDetails')
-      return null
+  } else {
+    return null;
   }
 };
 

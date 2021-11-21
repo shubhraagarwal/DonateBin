@@ -9,9 +9,29 @@ import {
 import {Icon, Input} from 'react-native-elements';
 import Store from '../../store/Store';
 import styles from '../../styles/ScreenStyle/Donor/DonorStyles';
+import Axios from 'axios';
+import {v4 as uuidv4} from 'uuid';
 
-const ProdDetails = ({navigation}) => {
-  const [prodName, setprodName] = useState('hello');
+const ProdDetails = ({navigation, route}) => {
+  const {itemType, imgBase64} = route.params;
+  const [prodName, setprodName] = useState(itemType.class_name);
+
+  const Submit = () => {
+    Axios.post('http://10.0.2.2:5000/donate', {
+      uid: uuidv4(),
+      email: Store.basicUserInfo.email,
+      prodName: prodName,
+      name: Store.basicUserInfo.name,
+      image: imgBase64,
+    })
+      .then(res => {
+        console.log(res);
+        navigation.navigate('DonorConfirmation');
+      })
+      .catch(err => {
+        console.log(err);
+      });
+  };
 
   return (
     <View style={styles.container}>
@@ -35,16 +55,16 @@ const ProdDetails = ({navigation}) => {
           </View>
           <View style={{flex: 5, justifyContent: 'center'}}>
             <Input
-              placeholder={'Product Type'}
+              placeholder={`${itemType}`}
               value={prodName}
-              editable={false}
+              onChangeText={text => setprodName(text)}
               style={styles.input}
               placeholderTextColor="#000"
             />
             <TouchableOpacity
               style={styles.confirmationButton}
               onPress={() => {
-                navigation.navigate('DonorConfirmation');
+                Submit();
               }}>
               <Text style={{color: '#fff', fontSize: 25}}>Confirm</Text>
             </TouchableOpacity>

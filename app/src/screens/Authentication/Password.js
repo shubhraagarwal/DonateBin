@@ -4,12 +4,12 @@ import styles from '../../styles/ScreenStyle/Authentication/PhoneAuth';
 import Verify from '../../components/Auth/Verify';
 
 const Password = ({route,navigation}) => {
-  const {email}=route.params;
+  const {email,name,type}=route.params;
 
   return (
     <View style={styles.container}>
       <View style={styles.verifyModal}>
-        <Verify email={email} navigation={navigation} />
+        <Verify email={email} navigation={navigation} name={name} type={type} />
       </View>
     </View>
   );

@@ -1,11 +1,17 @@
 import React, {useState, useEffect} from 'react';
 import {Alert, Text, TextInput, TouchableOpacity, View} from 'react-native';
 import styles from '../../styles/ScreenStyle/Authentication/PhoneAuth';
+import Axios from 'axios';
 
 const LoginModal = ({navigation}) => {
   const [name, setname] = useState('');
   const [email, setemail] = useState();
   const [type, settype] = useState('donor');
+
+  const onSubmitHandler = () => {
+    // ! fucntion to send email and name to backend
+    navigation.navigate('Password', {email: email, type: type, name: name});
+  };
 
   return (
     <View style={styles.modalContainer}>
@@ -35,8 +41,8 @@ const LoginModal = ({navigation}) => {
           placeholderTextColor="grey"
           onChangeText={text => setemail(text)}
           style={styles.textInput}
-          keyboardType='email-address'
-          autoCapitalize='none'
+          keyboardType="email-address"
+          autoCapitalize="none"
           autoCorrect={false}
         />
       </View>
@@ -45,8 +51,7 @@ const LoginModal = ({navigation}) => {
           style={styles.modalButton}
           onPress={() => {
             if (email !== '' && name !== '') {
-              // ! fucntion to send email and name to backend
-              navigation.navigate('Password',{email:email})
+              onSubmitHandler();
             } else {
               Alert.alert('Please fill all the details');
             }
@@ -57,12 +62,8 @@ const LoginModal = ({navigation}) => {
         </TouchableOpacity>
         <TouchableOpacity
           style={{marginTop: '1.5%'}}
-          onPress={() =>
-            navigation.navigate('SignIn')
-          }>
-          <Text style={styles.checkText}>
-            Already a user.. Sign in
-          </Text>
+          onPress={() => navigation.navigate('SignIn')}>
+          <Text style={styles.checkText}>Already a user.. Sign in</Text>
         </TouchableOpacity>
         <TouchableOpacity
           style={{marginTop: '1.5%'}}

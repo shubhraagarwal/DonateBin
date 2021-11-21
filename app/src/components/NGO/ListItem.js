@@ -9,23 +9,34 @@ import {useNavigation} from '@react-navigation/native';
 
 const ListItem = ({item, donor}) => {
   const navigation = useNavigation();
-
+  console.log(item);
   return (
     <TouchableOpacity
       onPress={() => {
-        donor?navigation.navigate('DonorItemDetails',{item}):navigation.navigate('ItemDetails', {item: item});
+        donor
+          ? navigation.navigate('DonorItemDetails', {item})
+          : navigation.navigate('ItemDetails', {item: item});
       }}
       style={donor ? styles.donorListItemContainer : styles.listItemContainer}>
-      <Image
-        source={require('../../../assets/dummyImage.jpg')}
-        style={styles.listImage}
-      />
+      {item.image ? (
+        <Image
+          source={{
+            uri:`data:image/png;base64,${item.image}`
+          }}
+          style={styles.listImage}
+        />
+      ) : (
+        <Image
+          source={require('../../../assets/dummyImage.jpg')}
+          style={styles.listImage}
+        />
+      )}
       <View
         style={{
           paddingLeft: wp('5%'),
         }}>
-        <Text style={styles.itemHeader}>{item.title}</Text>
-        <Text>{item.description}</Text>
+        <Text style={styles.itemHeader}>{`${item.prodName} `}</Text>
+        <Text>{item.prodName}</Text>
       </View>
     </TouchableOpacity>
   );
