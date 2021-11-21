@@ -42,7 +42,7 @@ def signup():
 # function to check if user is donor or NGO
 @app.route("/getInfo", methods=["GET"])
 def getInfo():
-    get_body = json.loads(request.data.decode("utf-8"))
+    get_body = request.args
     get_email = get_body["email"]
     get_details = collection.find_one({"email" : get_email})
     if (get_details):
@@ -67,3 +67,5 @@ def donate():
             json_str = dumps(donation_details, default=my_handler)
             return Response(json_str, status = 200)  
         return Response("User not found", status=401)
+
+# function to show a list of available donations for the NGO
