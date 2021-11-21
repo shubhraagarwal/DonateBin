@@ -15,11 +15,13 @@ Stack:<br>
 <li>Back-End - Flask, PyTorch </li>
 <li> Database - MongoDB </li>
 </ul>
+
 ## Challenges we ran into
 <ul>
 <li> Data collection of different fashion items was a challenge.</li>
 <li> Transfer learning on VGG-16 for fashion items and furniture items was time consuming.</li>
 </ul>
+
 ## Accomplishments that we're proud of
 We are proud to have built an application that contributes towards easy sustainability and reducing waste generation, at the same time creating an opportunity to help someone with a chance to live a better life.
 ## What we learned
