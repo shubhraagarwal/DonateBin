@@ -30,5 +30,7 @@ While developing the application, we learnt many new things such as:
 <li> Integrating a map in an application </li>
 <li> Transfer learning on VGG 16. </li>
 </ul>
+
 ## What's next for DonateBin
+
 We want to set up a verification method for organisations. We also want to set up a rating system for donors and organisations, to ensure good quality items are being donated and donation happens ethically. We want to reduce the size of the machine learning backend so that it can be deployed easily.
