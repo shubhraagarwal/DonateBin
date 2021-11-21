@@ -77,3 +77,24 @@ def getDonations():
     get_donations = collection1.find()
     json_str = dumps(get_donations, default=my_handler)
     return Response(json_str, status = 200)
+
+@app.route("/confirm", methods=["POST"])
+def confirmDonation():
+    post = json.loads(request.data.decode("utf-8"))
+    collection1.find_one_and_delete({"uid" : post["uid"]})
+    # get array donation_details from collection email
+    get_details = collection.find_one({"email" : post["email"], "donation_details.uid" : post["uid"]})
+
+    # function to remove the element from the array using uid
+    def remove_element(array, element):
+        for i in range(len(array)):
+            if array[i]["uid"] == element:
+                array.pop(i)
+                return array
+    newArr = remove_element(get_details["donation_details"], post["uid"])
+    collection.update_one({"email" : post["email"]}, {"$set" : {"donation_details" : newArr}})
+    # print(newArr)
+
+    
+
+    return Response("Donation Picked Up", status = 200)
