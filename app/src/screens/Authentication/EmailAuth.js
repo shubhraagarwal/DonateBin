@@ -11,7 +11,6 @@ const PhoneAuth = ({navigation}) => {
   const [initializing, setInitializing] = useState(true);
 
   function onAuthStateChanged(user) {
-    console.log(user.email);
     Axios.get(`http://10.0.2.2:5000/getInfo?email=${user.email}`)
       .then(res => {
         console.log(res.data);

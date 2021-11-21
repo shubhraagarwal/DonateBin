@@ -16,7 +16,9 @@ const ItemDetails = ({route,navigation}) => {
 
   return (
     <ImageBackground
-      source={require('../../../assets/dummyImage.jpg')}
+      source={{
+        uri: `data:image/png;base64,${item.image}`
+      }}
       resizeMode="cover"
       style={{flex: 1, justifyContent: 'center'}}>
       <View style={[styles.modal, {height: hp('40%')}]}>
@@ -28,13 +30,13 @@ const ItemDetails = ({route,navigation}) => {
           </TouchableOpacity>
         </View>
         <View style={styles.detailsContainer}>
-          <View style={{flex:1,justifyContent:"center"}} ><Text style={styles.HeaderText} >{item.title}</Text>
+          <View style={{flex:1,justifyContent:"center"}} ><Text style={styles.HeaderText} >{item.prodName}</Text>
           <Text style={styles.descriptionText} >{item.description}</Text>
           </View>
           <View style={{flex:1,justifyContent:"space-around"}} >
           <Text style={styles.confirmText} >Press to confirm booking</Text>
           <TouchableOpacity 
-          onPress={()=>navigation.navigate('Confirm')}
+          onPress={()=>navigation.navigate('Confirm',{item})}
           style={styles.confirmButton} >
             <Text style={{color:"#fff",fontSize:hp('3%')}} >Confirm Booking</Text>
           </TouchableOpacity>

@@ -3,10 +3,12 @@ import React from 'react';
 import {ImageBackground, Text, TouchableOpacity, View} from 'react-native';
 import styles from '../../styles/ScreenStyle/Confirmation/ConfirmStyles';
 
-const Confirm = ({navigation}) => {
+const Confirm = ({navigation, item}) => {
   return (
     <ImageBackground
-      source={require('../../../assets/dummyImage.jpg')}
+      source={{
+        uri: `data:image/png;base64,${item.image}`,
+      }}
       style={{flex: 1}}
       resizeMode="cover">
       <View style={styles.container}>
@@ -20,7 +22,7 @@ const Confirm = ({navigation}) => {
         />
         <TouchableOpacity
           onPress={() => {
-            navigation.navigate('Landing');
+            navigation.navigate('DelDetails');
           }}
           style={styles.returnButton}>
           <Text style={{color: '#fff', fontSize: 25}}>

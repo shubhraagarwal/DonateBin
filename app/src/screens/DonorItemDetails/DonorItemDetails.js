@@ -23,7 +23,7 @@ const DonorItemDetails = ({route, navigation}) => {
         <View style={{flex: 2}}>
           <TouchableOpacity style={styles.detailsHeader}>
             <Text style={{color: '#3A4A3D', fontSize: hp('3%')}}>
-              Product name
+             {item.prodName}
             </Text>
           </TouchableOpacity>
         </View>

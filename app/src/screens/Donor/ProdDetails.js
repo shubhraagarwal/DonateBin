@@ -23,6 +23,8 @@ const ProdDetails = ({navigation, route}) => {
       prodName: prodName,
       name: Store.basicUserInfo.name,
       image: imgBase64,
+      longitude: Store.longitude,
+      latitude: Store.latitude,
     })
       .then(res => {
         console.log(res);
