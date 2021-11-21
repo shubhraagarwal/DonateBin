@@ -18,6 +18,8 @@ target 'sustain_the_world' do
 
   pod 'react-native-camera', :path => '../node_modules/react-native-camera'
 
+  pod 'RNSVG', :path => '../node_modules/react-native-svg'
+
   target 'sustain_the_worldTests' do
     inherit! :complete
     # Pods for testing

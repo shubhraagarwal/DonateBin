@@ -28,9 +28,9 @@ const PhoneAuth = ({navigation}) => {
     </View>
   );}else{
     setTimeout(() => {
-      navigation.navigate('DelDetails');
+      // navigation.navigate('DelDetails');
        // ! put a check later
-      //  navigation.navigate('LandDonor',{list:false});
+       navigation.navigate('LandDonor',{list:false});
     }, 10);
     return null
   }

@@ -1,12 +1,17 @@
-import React, { useState, useEffect } from 'react';
-import {Image, ImageBackground, Text, TouchableOpacity, View} from 'react-native';
+import React, {useState, useEffect} from 'react';
+import {
+  Image,
+  ImageBackground,
+  Text,
+  TouchableOpacity,
+  View,
+} from 'react-native';
 import {Icon, Input} from 'react-native-elements';
 import Store from '../../store/Store';
 import styles from '../../styles/ScreenStyle/Donor/DonorStyles';
 
 const ProdDetails = ({navigation}) => {
-
-    const [prodName, setprodName] = useState('hello');
+  const [prodName, setprodName] = useState('hello');
 
   return (
     <View style={styles.container}>
@@ -28,22 +33,20 @@ const ProdDetails = ({navigation}) => {
               Product Details
             </Text>
           </View>
-          <View style={{flex: 5,justifyContent:"center"}}>
-              <Input
+          <View style={{flex: 5, justifyContent: 'center'}}>
+            <Input
               placeholder={'Product Type'}
               value={prodName}
               editable={false}
               style={styles.input}
-              placeholderTextColor='#000'
-              />
-            <TouchableOpacity style={styles.confirmationButton}
-            onPress={() => {
-              navigation.navigate('DonorConfirmation');
-            }}
-            >
-                <Text style={{color:"#fff",fontSize:25,}} >
-                    Confirm
-                </Text>
+              placeholderTextColor="#000"
+            />
+            <TouchableOpacity
+              style={styles.confirmationButton}
+              onPress={() => {
+                navigation.navigate('DonorConfirmation');
+              }}>
+              <Text style={{color: '#fff', fontSize: 25}}>Confirm</Text>
             </TouchableOpacity>
           </View>
         </View>

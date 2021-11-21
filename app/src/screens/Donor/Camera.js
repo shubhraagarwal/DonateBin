@@ -25,7 +25,6 @@ const Camera = ({navigation}) => {
         style={styles.campreview}
         ref={cameraRef}
         type={RNCamera.Constants.Type.back}
-        flashMode={RNCamera.Constants.FlashMode.on}
       />
       <View style={styles.captureContainer}>
         <TouchableOpacity onPress={takePicture} style={styles.capture}>

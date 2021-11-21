@@ -1,17 +1,13 @@
 import React from 'react';
-import {
-  ImageBackground,
-  Text,
-  TouchableOpacity,
-  View,
-} from 'react-native';
-import styles from '../../styles/ScreenStyle/NGO/DelDetails';
+import {ImageBackground, Text, TouchableOpacity, View} from 'react-native';
+import styles from '../../styles/ScreenStyle/DonorItemStyles/Style';
 import {
   widthPercentageToDP as wp,
   heightPercentageToDP as hp,
 } from 'react-native-responsive-screen';
+import QRCode from 'react-native-qrcode-svg';
 
-const DonorItemDetails = ({route,navigation}) => {
+const DonorItemDetails = ({route, navigation}) => {
   const {item} = route.params;
 
   return (
@@ -19,25 +15,30 @@ const DonorItemDetails = ({route,navigation}) => {
       source={require('../../../assets/dummyImage.jpg')}
       resizeMode="cover"
       style={{flex: 1, justifyContent: 'center'}}>
-      <View style={[styles.modal, {height: hp('40%')}]}>
-        <View style={{flex: 3}}>
+      <View style={[styles.modal, {height: hp('60%')}]}>
+        <View style={{flex: 2}}>
           <TouchableOpacity style={styles.detailsHeader}>
             <Text style={{color: '#3A4A3D', fontSize: hp('3%')}}>
-              Product Details
+              Product name
             </Text>
           </TouchableOpacity>
         </View>
         <View style={styles.detailsContainer}>
-          <View style={{flex:1,justifyContent:"center"}} ><Text style={styles.HeaderText} >{item.title}</Text>
-          <Text style={styles.descriptionText} >{item.description}</Text>
+          <View style={{flex: 2, justifyContent: 'center',alignItems:"center"}}>
+            <QRCode
+              value="http://awesome.link.qr"
+              backgroundColor='transparent'
+              size={hp('23%')}
+            />
           </View>
-          <View style={{flex:1,justifyContent:"space-around"}} >
-          <Text style={styles.confirmText} >Press to confirm booking</Text>
-          <TouchableOpacity 
-          onPress={()=>navigation.navigate('Confirm')}
-          style={styles.confirmButton} >
-            <Text style={{color:"#fff",fontSize:hp('3%')}} >Confirm Booking</Text>
-          </TouchableOpacity>
+          <View style={{flex: 1, justifyContent: 'space-around'}}>
+            <TouchableOpacity
+              onPress={() => navigation.navigate('Confirm')}
+              style={styles.confirmButton}>
+              <Text style={{color: '#fff', fontSize: hp('3%')}}>
+                Donate
+              </Text>
+            </TouchableOpacity>
           </View>
         </View>
       </View>

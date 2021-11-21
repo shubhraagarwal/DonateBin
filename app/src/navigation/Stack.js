@@ -15,6 +15,7 @@ import DonorConfirmation from '../screens/DonorConfirmation/DonorConfirmation';
 import DonorItemDetails from '../screens/DonorItemDetails/DonorItemDetails';
 import Profile from '../screens/Profile/Profile';
 import QRCode from '../screens/QRCode/QrCode';
+import DonorProfile from '../screens/DonorProfile/DonorProfile';
 
 const StackNav = createNativeStackNavigator();
 
@@ -38,6 +39,7 @@ const Stack = () => {
         <StackNav.Screen component={DonorItemDetails} name='DonorItemDetails'/>
         <StackNav.Screen component={Profile} name='Profile'/>
         <StackNav.Screen component={QRCode} name='QRCode'/>
+        <StackNav.Screen component={DonorProfile} name='DonorProfile'/>
       </StackNav.Navigator>
     </NavigationContainer>
   );
