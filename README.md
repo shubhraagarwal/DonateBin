@@ -15,6 +15,31 @@ Hence the donors can donate any item in any quantity (without worrying about how
 ![plot](images/5.png)
 ![plot](images/6.png)
 ![plot](images/7.png)<br>
+  
+### Working
+#### Installation 
+ ```
+ git clone  https://github.com/shubhraagarwal/DonateBin.git
+ cd DonateBin
+ ```
+#### Backend
+ ```
+ cd backend
+ pip3 install -r requirements.txt
+ python3 app.py
+ ```
+#### ML Model
+ ```
+ cd classification
+ pip3 install -r requirements.txt
+ python3 main.py
+ ```
+## Frontend
+ ```
+ cd app
+ npm install 
+ react-native run-android
+ ```
 ### How we built it
 Our development application is visual studio code.
 Stack:<br>
