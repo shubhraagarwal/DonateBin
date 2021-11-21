@@ -33,4 +33,63 @@ While developing the application, we learnt many new things such as:
 
 ## What's next for DonateBin
 
-We want to set up a verification method for organisations. We also want to set up a rating system for donors and organisations, to ensure good quality items are being donated and donation happens ethically. We want to reduce the size of the machine learning backend so that it can be deployed easily.
+We want to set up a verification method for organisations. We also want to set up a rating system for donors and organisations, to ensure good quality items are being donated and donation happens ethically. We want to reduce the size of the machine learning backend so that it can be deployed easily.<br>
+
+<h1 align="center"> Contributors </h1>
+<table align="center">
+<tr align="center">
+<td>
+<strong>Breenda Das</strong>
+<p align="center">
+<img src = "https://cdn.discordapp.com/attachments/857649911759896579/858635368945156116/breenda.jpeg"  height="120" alt="Breenda Das">
+</p>
+<p align="center">
+<a href = "https://github.com/ds-brx"><img src = "http://www.iconninja.com/files/241/825/211/round-collaboration-social-github-code-circle-network-icon.svg" width="36" height = "36"/></a>
+<a href = "https://www.linkedin.com/in/breenda-das-68a1891aa/">
+<img src = "http://www.iconninja.com/files/863/607/751/network-linkedin-social-connection-circular-circle-media-icon.svg" width="36" height="36"/>
+</a>
+</p>
+</td>
+<td>
+<strong>Shubhra Agarwal</strong>
+<p align="center">
+<img src = "https://cdn.discordapp.com/attachments/852945305280577588/853135575421943858/Untitled_design.png" alt="Shubhra Agarwal" height="120">
+</p>
+<p align="center">
+<a href = "https://github.com/shubhraagarwal"><img src = "http://www.iconninja.com/files/241/825/211/round-collaboration-social-github-code-circle-network-icon.svg" width="36" height = "36"/></a>
+<a href = "https://www.linkedin.com/in/agarwalshubhra/">
+<img src = "http://www.iconninja.com/files/863/607/751/network-linkedin-social-connection-circular-circle-media-icon.svg" width="36" height="36"/>
+</a>
+</p>
+</td>
+</tr>
+</table>
+<table align="center">
+<tr align="center">
+<td>
+<strong>Naman Garg</strong>
+<p align="center">
+<img src = "https://avatars.githubusercontent.com/u/40496687?v=4" alt="Palak Aggarwal" height="120">
+</p>
+<p align="center">
+<a href = "https://github.com/Namangarg110"><img src = "http://www.iconninja.com/files/241/825/211/round-collaboration-social-github-code-circle-network-icon.svg" width="36" height = "36"/></a>
+<a href = "https://www.linkedin.com/in/namangarg110/">
+<img src = "http://www.iconninja.com/files/863/607/751/network-linkedin-social-connection-circular-circle-media-icon.svg" width="36" height="36"/>
+</a>
+</p>
+</td>
+<td>
+<strong>Sumrit Grover</strong>
+<p align="center">
+<img src = "https://cdn.discordapp.com/attachments/852945305280577588/852945815592632360/sumrit_grover.jpg" alt="Sumrit Grover" height="120">
+</p>
+<p align="center">
+<a href = "https://github.com/smgrv123"><img src = "http://www.iconninja.com/files/241/825/211/round-collaboration-social-github-code-circle-network-icon.svg" width="36" height = "36"/></a>
+<a href = "https://www.linkedin.com/in/sumrit-grover-1689351aa/">
+<img src = "http://www.iconninja.com/files/863/607/751/network-linkedin-social-connection-circular-circle-media-icon.svg" width="36" height="36"/>
+</a>
+</p>
+</td>
+</tr>
+</table>
+
