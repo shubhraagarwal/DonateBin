@@ -59,7 +59,8 @@ def donate():
         collection.update_one({"email" : post["email"]}, {"$push" : {"donation_details" : post}})
         return Response("Donation Successful", status = 200)
     elif(request.method == "GET"):
-        get_body = json.loads(request.data.decode("utf-8"))
+        get_body = request.args
+        print(get_body)
         get_email = get_body["email"]
         get_details = collection.find_one({"email" : get_email})
         if (get_details):
