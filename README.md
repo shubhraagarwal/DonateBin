@@ -49,6 +49,8 @@ We want to set up a verification method for organisations. We also want to set u
 <img src = "http://www.iconninja.com/files/863/607/751/network-linkedin-social-connection-circular-circle-media-icon.svg" width="36" height="36"/>
 </a>
 </p>
+</td>
+<td>
 <strong>Shubhra Agarwal</strong>
 <p align="center">
 <img src = "https://cdn.discordapp.com/attachments/852945305280577588/853135575421943858/Untitled_design.png" alt="Shubhra Agarwal" height="120">
@@ -59,6 +61,8 @@ We want to set up a verification method for organisations. We also want to set u
 <img src = "http://www.iconninja.com/files/863/607/751/network-linkedin-social-connection-circular-circle-media-icon.svg" width="36" height="36"/>
 </a>
 </p>
+</td>
+<td>
 <strong>Sumrit Grover</strong>
 <p align="center">
 <img src = "https://cdn.discordapp.com/attachments/852945305280577588/852945815592632360/sumrit_grover.jpg" alt="Sumrit Grover" height="120">
