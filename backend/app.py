@@ -16,6 +16,7 @@ collection = db.profile
 def index():
     return "Hello, World!"
 
+# hit "/signup" in your client to create a new profile, it automatically checks if user exists or not from the db, and returns response and status code depending on the response from the db
 @app.route("/signup", methods=[ "POST"])
 def signup():
     post = json.loads(request.data.decode("utf-8"))
