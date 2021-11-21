@@ -49,3 +49,11 @@ def getInfo():
         json_str = dumps(get_details, default=my_handler)
         return Response(json_str, status = 200)  
     return Response("User not found", status=401)
+
+# function to store the donation details
+@app.route("/donate", methods=["POST"])
+def donate():
+    post = json.loads(request.data.decode("utf-8"))
+    post["donation_date"] = datetime.datetime.now()
+    collection.update_one({"email" : post["email"]}, {"$push" : {"donation_details" : post}})
+    return Response("Donation Successful", status = 200)
