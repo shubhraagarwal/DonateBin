@@ -13,6 +13,8 @@ client = MongoClient("mongodb+srv://profile:profile@cluster0.g1gz1.mongodb.net/d
 
 db = client.donor
 collection = db.profile
+db1 = client.ngo
+collection1 = db1.ngo
 
 
 
@@ -57,10 +59,10 @@ def donate():
         post = json.loads(request.data.decode("utf-8"))
         post["donation_date"] = datetime.datetime.now()
         collection.update_one({"email" : post["email"]}, {"$push" : {"donation_details" : post}})
+        collection1.insert_one(post)
         return Response("Donation Successful", status = 200)
     elif(request.method == "GET"):
         get_body = request.args
-        print(get_body)
         get_email = get_body["email"]
         get_details = collection.find_one({"email" : get_email})
         if (get_details):
@@ -70,3 +72,8 @@ def donate():
         return Response("User not found", status=401)
 
 # function to show a list of available donations for the NGO
+@app.route("/getDonations", methods=["GET"])
+def getDonations():
+    get_donations = collection1.find()
+    json_str = dumps(get_donations, default=my_handler)
+    return Response(json_str, status = 200)
