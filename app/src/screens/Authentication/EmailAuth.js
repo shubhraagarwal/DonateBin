@@ -30,7 +30,7 @@ const PhoneAuth = ({navigation}) => {
     setTimeout(() => {
       // navigation.navigate('DelDetails');
        // ! put a check later
-       navigation.navigate('LandDonor');
+       navigation.navigate('LandDonor',{list:false});
     }, 10);
     return null
   }

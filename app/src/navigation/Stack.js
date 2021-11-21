@@ -11,6 +11,8 @@ import SignIn from '../screens/Authentication/SignIn';
 import LandDonor from '../screens/Donor/LandDonor';
 import Camera from '../screens/Donor/Camera';
 import ProdDetails from '../screens/Donor/ProdDetails';
+import DonorConfirmation from '../screens/DonorConfirmation/DonorConfirmation';
+import DonorItemDetails from '../screens/DonorItemDetails/DonorItemDetails';
 
 const StackNav = createNativeStackNavigator();
 
@@ -30,6 +32,8 @@ const Stack = () => {
         <StackNav.Screen component={LandDonor} name='LandDonor'/>
         <StackNav.Screen component={Camera} name='Camera'/>
         <StackNav.Screen component={ProdDetails} name='ProdDetails'/>
+        <StackNav.Screen component={DonorConfirmation} name='DonorConfirmation'/>
+        <StackNav.Screen component={DonorItemDetails} name='DonorItemDetails'/>
       </StackNav.Navigator>
     </NavigationContainer>
   );
