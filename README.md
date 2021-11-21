@@ -9,13 +9,10 @@ The application has **two interfaces**, one for the donors and one for organisat
 Hence the donors can donate any item in any quantity (without worrying about how less or how much there donation is going to be) and organisations can collect items from entire area in one day without having to make rounds or making different appointment with people.<br>
 ## App UI
 ![plot](images/1.png)
-![plot](images/2.png)
-![plot](images/3.png)
 ![plot](images/4.png)
 ![plot](images/5.png)
 ![plot](images/6.png)
-![plot](images/7.png)
-![plot](images/8.png)<br>
+![plot](images/7.png)<br>
 ## How we built it
 Our development application is visual studio code.
 Stack:<br>
