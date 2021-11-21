@@ -49,3 +49,21 @@ def getInfo():
         json_str = dumps(get_details, default=my_handler)
         return Response(json_str, status = 200)  
     return Response("User not found", status=401)
+
+# function to store the donation details
+@app.route("/donate", methods=["POST", "GET"])
+def donate():
+    if(request.method == "POST"):
+        post = json.loads(request.data.decode("utf-8"))
+        post["donation_date"] = datetime.datetime.now()
+        collection.update_one({"email" : post["email"]}, {"$push" : {"donation_details" : post}})
+        return Response("Donation Successful", status = 200)
+    elif(request.method == "GET"):
+        get_body = json.loads(request.data.decode("utf-8"))
+        get_email = get_body["email"]
+        get_details = collection.find_one({"email" : get_email})
+        if (get_details):
+            donation_details = get_details["donation_details"]
+            json_str = dumps(donation_details, default=my_handler)
+            return Response(json_str, status = 200)  
+        return Response("User not found", status=401)
