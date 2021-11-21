@@ -2,11 +2,29 @@ import React from 'react';
 import {Image, Text, TouchableOpacity, View} from 'react-native';
 import {Icon} from 'react-native-elements';
 import styles from '../../styles/ScreenStyle/Donor/DonorStyles';
+import {
+  widthPercentageToDP as wp,
+  heightPercentageToDP as hp,
+} from 'react-native-responsive-screen';
 
 const NoItems = ({navigation}) => {
   return (
     <View style={styles.container}>
-      <View style={{flex: 5, justifyContent: 'center'}}>
+      <View
+        style={{
+          flex: 5,
+          justifyContent: 'center',
+          alignItems: 'flex-start',
+        }}>
+        <Icon
+          hitSlop={{top: 10, bottom: 10, left: 20, right: 20}}
+          onPress={() => navigation.navigate('DonorProfile')}
+          type="material-community"
+          name={'drag-horizontal-variant'}
+          color="#000"
+          size={hp('5%')}
+          style={{marginLeft: wp('5%')}}
+        />
         <Image
           style={styles.image}
           source={require('../../../assets/Donor.png')}

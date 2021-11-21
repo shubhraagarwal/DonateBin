@@ -10,7 +10,7 @@ const styles = StyleSheet.create({
     backgroundColor: '#fff',
   },
   image: {
-    width: wp('75%'),
+    width: wp('71%'),
     height: hp('35.25%'),
     alignSelf: 'center',
   },
@@ -105,10 +105,10 @@ const styles = StyleSheet.create({
     borderRadius: wp('2.5%'),
   },
   heading:{
-    textAlign:"center",
     fontWeight:"bold",
     fontSize:hp('5%'),
-    color:"#000"
+    color:"#000",
+    alignSelf:"center"
   }
 });
 

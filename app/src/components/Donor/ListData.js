@@ -3,12 +3,24 @@ import {FlatList, Image, Text, TouchableOpacity, View} from 'react-native';
 import {Icon} from 'react-native-elements';
 import styles from '../../styles/ScreenStyle/Donor/DonorStyles';
 import ListItem from '../../components/NGO/ListItem';
-import NoItems from '../../components/Donor/NoItems';
+import {
+  widthPercentageToDP as wp,
+  heightPercentageToDP as hp,
+} from 'react-native-responsive-screen';
 
 const ListData = ({data, navigation}) => {
   return (
     <View style={{flex: 1, backgroundColor: '#fff'}}>
-      <View style={{flex: 2, justifyContent: 'center'}}>
+      <View style={{flex: 2, justifyContent: 'center',alignItems:"flex-start"}}>
+        <Icon
+          hitSlop={{top: 10, bottom: 10, left: 20, right: 20}}
+          onPress={() => navigation.navigate('DonorProfile')}
+          type="material-community"
+          name={'drag-horizontal-variant'}
+          color="#000"
+          size={hp('5%')}
+          style={{marginLeft: wp('5%')}}
+        />
         <Text style={styles.heading}>Active Donations</Text>
       </View>
       <View style={{flex: 6}}>
