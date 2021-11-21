@@ -4,7 +4,7 @@ import {Icon, Input} from 'react-native-elements';
 import Store from '../../store/Store';
 import styles from '../../styles/ScreenStyle/Donor/DonorStyles';
 
-const ProdDetails = () => {
+const ProdDetails = ({navigation}) => {
 
     const [prodName, setprodName] = useState('hello');
 
@@ -36,7 +36,11 @@ const ProdDetails = () => {
               style={styles.input}
               placeholderTextColor='#000'
               />
-            <TouchableOpacity style={styles.confirmationButton} >
+            <TouchableOpacity style={styles.confirmationButton}
+            onPress={() => {
+              navigation.navigate('DonorConfirmation');
+            }}
+            >
                 <Text style={{color:"#fff",fontSize:25,}} >
                     Confirm
                 </Text>

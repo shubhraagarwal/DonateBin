@@ -103,6 +103,12 @@ const styles = StyleSheet.create({
     height: hp('6%'),
     justifyContent:'center',
     borderRadius: wp('2.5%'),
+  },
+  heading:{
+    textAlign:"center",
+    fontWeight:"bold",
+    fontSize:hp('5%'),
+    color:"#000"
   }
 });
 

@@ -5,18 +5,17 @@ import {
   widthPercentageToDP as wp,
   heightPercentageToDP as hp,
 } from 'react-native-responsive-screen';
-import {useNavigation} from '@react-navigation/native'
+import {useNavigation} from '@react-navigation/native';
 
-const ListItem = ({item}) => {
-
-const navigation=useNavigation()
+const ListItem = ({item, donor}) => {
+  const navigation = useNavigation();
 
   return (
-    <TouchableOpacity 
-    onPress={() => {
-        navigation.navigate('ItemDetails',{item:item})
-    }}
-    style={styles.listItemContainer}>
+    <TouchableOpacity
+      onPress={() => {
+        donor?navigation.navigate('DonorItemDetails',{item}):navigation.navigate('ItemDetails', {item: item});
+      }}
+      style={donor ? styles.donorListItemContainer : styles.listItemContainer}>
       <Image
         source={require('../../../assets/dummyImage.jpg')}
         style={styles.listImage}

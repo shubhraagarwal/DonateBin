@@ -1,32 +1,44 @@
 import React from 'react';
-import {Image, Text, TouchableOpacity, View} from 'react-native';
-import {Icon} from 'react-native-elements';
-import styles from '../../styles/ScreenStyle/Donor/DonorStyles';
+import NoItems from '../../components/Donor/NoItems';
+import ListData from '../../components/Donor/ListData';
 
-const LandDonor = ({navigation}) => {
-  return (
-    <View style={styles.container}>
-      <View style={{flex: 5, justifyContent: 'center'}}>
-        <Image
-          style={styles.image}
-          source={require('../../../assets/Donor.png')}
-        />
-      </View>
-      <View style={{flex: 4, justifyContent: 'center'}}>
-        <Text style={styles.mainText}>
-          Uh oh, Looks like there are no active donations right now, click the
-          Camera button on the bottom right corner to start the donation process
-        </Text>
-      </View>
-      <View style={{flex: 1.5, justifyContent: 'center'}}>
-        <TouchableOpacity
-          style={styles.cameraButton}
-          onPress={() => navigation.navigate('Camera')}>
-          <Icon type="ant-design" name="camerao" size={35} color="#fff" />
-        </TouchableOpacity>
-      </View>
-    </View>
-  );
+const LandDonor = ({navigation, route}) => {
+  const list = route.params;
+  const data = [
+    {
+      id: 1,
+      title: 'Title 1',
+      description: 'Description 1',
+      image: '../../../assets/dummyImage.jpg',
+    },
+    {
+      id: 2,
+      title: 'Title 2',
+      description: 'Description 2',
+      image: '../../../assets/dummyImage.jpg',
+    },
+    {
+      id: 3,
+      title: 'Title 3',
+      description: 'Description 3',
+      image: '../../../assets/dummyImage.jpg',
+    },
+    {
+      id: 4,
+      title: 'Title 4',
+      description: 'Description 4',
+      image: '../../../assets/dummyImage.jpg',
+    },
+  ];
+  if (list.list) {
+    return (
+      <ListData data={data} navigation={navigation} />
+    );
+  } else {
+    return (
+      <NoItems navigation={navigation} />
+    );
+  }
 };
 
 export default LandDonor;

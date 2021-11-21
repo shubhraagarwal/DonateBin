@@ -83,6 +83,18 @@ const DelStyles = StyleSheet.create({
   map: {
     ...StyleSheet.absoluteFillObject,
   },
+  donorListItemContainer:{
+    flexDirection: 'row',
+    height: hp('15%'),
+    backgroundColor: '#fff',
+    alignItems: 'center',
+    marginBottom: hp('5%'),
+    borderRadius: hp('1%'),
+    paddingHorizontal: hp('2%'),
+    backgroundColor:"#A1B69C",
+    width: wp('90%'),
+    alignSelf:"center"
+  }
 });
 
 export default DelStyles;
