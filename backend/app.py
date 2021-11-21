@@ -3,7 +3,9 @@ from pymongo import MongoClient
 import datetime
 from flask import request, Response
 import json
-from pprint import pprint
+from bson.json_util import loads, dumps
+import bson.objectid
+
 
 app = Flask(__name__)
 client = MongoClient("mongodb+srv://profile:profile@cluster0.g1gz1.mongodb.net/donor?retryWrites=true&w=majority")
@@ -11,6 +13,17 @@ client = MongoClient("mongodb+srv://profile:profile@cluster0.g1gz1.mongodb.net/d
 
 db = client.donor
 collection = db.profile
+
+
+
+def my_handler(x):
+    if isinstance(x, datetime.datetime):
+        return x.isoformat()
+    elif isinstance(x, bson.objectid.ObjectId):
+        return str(x)
+    else:
+        raise TypeError(x)
+
 
 @app.route("/")
 def index():
@@ -33,5 +46,6 @@ def getInfo():
     get_email = get_body["email"]
     get_details = collection.find_one({"email" : get_email})
     if (get_details):
-        return Response(get_details["type"], status = 200)   
+        json_str = dumps(get_details, default=my_handler)
+        return Response(json_str, status = 200)  
     return Response("User not found", status=401)
