@@ -45,6 +45,7 @@ const LoginModal = ({navigation}) => {
           style={styles.modalButton}
           onPress={() => {
             if (email !== '' && name !== '') {
+              // ! fucntion to send email and name to backend
               navigation.navigate('Password',{email:email})
             } else {
               Alert.alert('Please fill all the details');
