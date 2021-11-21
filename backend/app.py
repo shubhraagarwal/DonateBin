@@ -21,8 +21,17 @@ def index():
 def signup():
     post = json.loads(request.data.decode("utf-8"))
     if (collection.find_one({"email" : post["email"]})):
-        print(collection.find({"email" : post["email"]}).limit(1))
         return Response("User Already Exists", status = 400)
     else :
         collection.insert_one(post)
         return Response("User Created", status = 201)
+
+# function to check if user is donor or NGO
+@app.route("/getInfo", methods=["GET"])
+def getInfo():
+    get_body = json.loads(request.data.decode("utf-8"))
+    get_email = get_body["email"]
+    get_details = collection.find_one({"email" : get_email})
+    if (get_details):
+        return Response(get_details["type"], status = 200)   
+    return Response("User not found", status=401)
